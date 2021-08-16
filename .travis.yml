@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - lts/*
+services:
+  - docker
+
+before_install:
+  - docker build -t yimlingloo/reactapp -f Dockerfile.dev .
+  
+script:
+  - docker run yimlingloo/reactapp npm run test -- --coverage
+  - echo "Hello World"
