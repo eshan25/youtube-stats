@@ -5,8 +5,8 @@ services:
   - docker
 
 before_install:
-  - docker build -t yimlingloo/reactapp -f Dockerfile.dev .
-  
+  - docker build -t eshan25/examplereactapp -f Dockerfile .
+
 script:
-  - docker run yimlingloo/reactapp npm run test -- --coverage
+  - docker run eshan25/examplereactapp npm run test -- --coverage
   - echo "Hello World"
